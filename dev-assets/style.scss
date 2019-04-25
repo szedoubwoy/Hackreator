@@ -1,10 +1,32 @@
 // Required
-@import "../node_modules/bootstrap/scss/bootstrap";
-
+@import "node_modules/bootstrap/scss/functions";
+@import "node_modules/bootstrap/scss/variables";
+@import "node_modules/bootstrap/scss/mixins/_breakpoints";
 
 @include media-breakpoint-down(sm) { 
+  .hero-btn-wrapper {
+    .btn {
+      margin-right: 0;
+      &-outline-primary{
+        margin-top: 20px;
+      }
+    }
+  }
 
+  .logo-grid{
+     &__item{
+      -webkit-flex-basis: 50%;
+      -ms-flex-basis: 50%;
+      flex-basis: 50%;
+    }
+  }
+
+  .review-item{
+    margin-bottom: 50px;
+  }
 }
+
+
 
 *{
   -webkit-box-sizing: border-box;
@@ -52,6 +74,23 @@ a:focus, a:hover, a:visited {
   padding-bottom: 100px;
   padding-left: 0px;
   padding-right: 0px;
+  @include media-breakpoint-down(sm) { 
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+}
+
+.ptb-70 {
+  padding-top: 70px;
+  padding-bottom: 70px;
+  padding-left: 0px;
+  padding-right: 0px;
+  @include media-breakpoint-down(sm) { 
+    padding-top: 35px;
+    padding-bottom: 35px;
+  }
+
 }
 
 /* NAVBAR FROPDOWN HOVER*/
@@ -68,8 +107,9 @@ li.dropdown:hover > .dropdown-menu {
 .navbar {
   display: flex;
   justify-content: space-between;
-  margin-top: 12px;
+ // margin-top: 12px;
   font-size: 13px;
+  background-color: white;
 
   a{
     color: black;
@@ -114,7 +154,7 @@ li.dropdown:hover > .dropdown-menu {
 }
 
 .hero {
-  margin-top: 10px;
+  margin-top: 70px;
   color: white;
 
   .jumbotron{
@@ -138,6 +178,7 @@ li.dropdown:hover > .dropdown-menu {
     font-weight: 600;
     font-size: 14px;
     border-radius: 2px;
+    margin-right: 10px;
 
     &-outline-primary{
       color: white;
@@ -213,4 +254,133 @@ li.dropdown:hover > .dropdown-menu {
     border-left: .3px dashed lightgray;
   }
  
+}
+
+.more-review-section {
+  h1 {
+    font-size: 36px;
+    padding-bottom: 10px;
+  }
+  p{
+    font-size: 14px;
+    line-height: 1.5rem;
+    padding-bottom: 4px;
+  }
+
+  .col {
+    border-radius: 10px;
+    border-color: black;
+    margin-bottom: 20px;
+  }
+}
+
+.logo-grid{
+  margin-top: -15px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  list-style: none;
+  &__item{
+    padding: 0 15px 30px 15px;
+    background: white;
+    -webkit-flex-basis: 20%;
+    -ms-flex-basis: 20%;
+    flex-basis: 20%;
+    .div{
+      -webkit-box-shadow: 1px 1px 5px 0 rgba(0,0,0,.3);
+      -moz-box-shadow: 1px 1px 5px 0 rgba(0,0,0,.3);
+      box-shadow: 1px 1px 5px 0 rgba(0,0,0,.3);
+    }
+  }
+
+  &__image{
+    width: 100%;
+  }
+}
+
+.onsite-remote-section {
+  color: white;
+
+  .onsite-grid {
+    display: flex;
+    flex-direction: row; //min col
+    @include media-breakpoint-down(sm) { 
+      flex-direction: column;
+    }
+
+    &__column {
+      display: flex;
+      padding-top: 20px;
+      flex-grow: 1;
+
+      &--orange {
+        padding-right: 30px;
+        justify-content: flex-end;
+        background-color: #de7c01;
+      }
+  
+      &--blue {
+        padding-left: 30px;
+        padding-right: 40px;
+        justify-content: center;
+        flex-basis: 500px;
+        background-color: #0090d9;
+        flex-grow: 0;
+      }
+  
+      &--seablue {
+        justify-content: flex-start;
+        background-color: #00b298;
+      }
+    }
+
+    &__content {
+      display: flex;
+      flex-direction: column; 
+      justify-content: space-between;
+      width: 100%;
+      margin-left: 15px;
+      text-align: center;
+      flex-basis: 350px;
+    }
+    
+   
+  }
+
+  .div {
+    //display: flex;
+   // justify-content: column;
+    margin-top: 10px;
+    margin-bottom: 30px;
+  }
+  
+  .btn {
+    font-weight: 300;
+    border-radius: 2px;
+
+    &-outline-primary{
+      color: white;
+      background-color: transparentize($color: white, $amount: 1);
+      border-color: white;
+
+      &:hover {
+        color: black;
+        background-color: white;
+      }
+    }
+  }
+
+  h1 {
+    font-size: 26px;
+  }
+
+  h2 {
+    font-size: 18px;
+  }
+
+  p {
+    font-size: 13px;
+    line-height: 1.5rem;
+  }
 }
